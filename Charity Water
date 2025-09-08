@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Make a Splash — charity: water Campus</title>
+  <meta name="description" content="Join our mission to provide safe drinking water to those in need. Every drop counts and every action matters." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Page frame (the black border look from Canva) -->
+  <div class="page-frame">
+    <!-- Two-column hero -->
+    <main class="hero">
+      <!-- LEFT: image panel -->
+      <figure class="hero-media">
+        <!-- Replace this image URL after you upload your own into /img/ -->
+        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1400&auto=format&fit=crop" 
+             alt="Woman carrying water containers near a reflective pool" />
+      </figure>
+
+      <!-- RIGHT: content card -->
+      <section class="hero-card" aria-label="Campaign introduction">
+        <div class="card">
+          <h1>Make a Splash</h1>
+          <p>
+            Join our mission to provide safe drinking water to those in need.
+            Every drop counts and every action matters.
+          </p>
+          <!-- Link this button to your fundraiser or section later -->
+          <a class="btn" href="#get-involved">Get Involved</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Dummy anchor for the button; replace with your real link later -->
+    <section id="get-involved" class="involved-note" aria-label="Get involved">
+      <p><strong>Pro tip:</strong> Change the button’s <code>href</code> to your real fundraising link.</p>
+    </section>
+  </div>
+</body>
+</html>
+/* =========================
+   Brand tokens (edit to match Canva)
+   ========================= */
+:root{
+  --cream-bg: #fdf2de;       /* page background */
+  --card-bg: #fff6e8;        /* card background */
+  --text: #3b2f28;           /* main text color (soft brown) */
+  --muted: #5c4a3e;
+  --button: #6b4f3a;         /* button brown */
+  --button-text: #ffffff;
+  --button-hover: #5d4433;
+  --radius: 18px;
+  --shadow: 0 12px 30px rgba(0,0,0,.10);
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream-bg);
+  line-height: 1.5;
+}
+
+/* Page frame to mimic the Canva border */
+.page-frame{
+  min-height: 100svh;
+  padding: 14px;                       /* spacing inside the frame */
+  background:
+    /* triple inset border look */
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(#000,#000) border-box;
+  border: 8px solid transparent;       /* outer black */
+  outline: 6px solid #fff;             /* thin white */
+  box-shadow: inset 0 0 0 4px #000;    /* inner black */
+}
+
+/* Two-column hero */
+.hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* left image, right card */
+  min-height: calc(100svh - 28px);     /* full height minus frame padding */
+}
+
+/* LEFT: Image panel */
+.hero-media{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RIGHT: Card column */
+.hero-card{
+  display: grid;
+  place-items: center;                  /* center card vertically + horizontally */
+  padding: clamp(24px, 6vw, 60px);
+}
+
+.card{
+  width: min(520px, 92%);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: clamp(22px, 4vw, 36px);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.06);
+  text-align: center;
+}
+
+.card h1{
+  margin: 0 0 10px;
+  font-size: clamp(26px, 4.4vw, 40px);
+  line-height: 1.1;
+}
+
+.card p{
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+/* Button */
+.btn{
+  display: inline-block;
+  background: var(--button);
+  color: var(--button-text);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+.btn:hover{
+  background: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(0,0,0,.22);
+}
+.btn:active{
+  transform: translateY(0);
+}
+
+/* Helper section for the demo anchor */
+.involved-note{
+  padding: 24px 18px;
+  text-align: center;
+  font-size: 14px;
+  color: #6d5b50;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px){
+  .hero{
+    grid-template-columns: 1fr; /* image on top, card below */
+  }
+  .hero-media{ height: 42vh; }
+}
+<img src="img/hero.jpg" alt="(describe the image accessibly)">
